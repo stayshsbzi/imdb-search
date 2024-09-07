@@ -39,7 +39,7 @@ const Cards = () => {
 
       {!imdbData &&
         <p>
-          Please Search your desire movies...
+          Please Search your desire movies here...
         </p>
       }
 
