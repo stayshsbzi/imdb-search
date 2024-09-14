@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
-
-import React,{createContext, useSyncExternalStore } from 'react'
+import React,{createContext, } from 'react'
 import ComponentC from './components/ComponentC.jsx'
 export const UserContext = createContext()
 function App() {
@@ -12,15 +11,12 @@ function App() {
       <UserContext.Provider value={user}>
     <ComponentC/>
     </UserContext.Provider>
-    <button > check for imdb </button>
-    
-    
+    <button > check for imdb </button> 
     <Routes>
       if (button='onclick') {
       <Route path="/" element={<Home />} />
        }
       </Routes>
-     
  else()
  {
 
