@@ -36,7 +36,7 @@ const Cards = () => {
         <input type='text' placeholder='Search for movies...' />
         <button type='submit'>Search</button>
       </form>
-
+ 
       {!imdbData &&
         <p>
           Please Search your desire movies here...
