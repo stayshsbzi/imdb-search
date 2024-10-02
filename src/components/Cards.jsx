@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import './Cards.css'
 import axios from 'axios'
+import { Icon } from '@iconify/react/dist/iconify.js'
 
 
 const Cards = () => {
@@ -28,6 +29,12 @@ const Cards = () => {
       .catch(err => console.error(err))
   }
 
+  const movieIcon =  <Icon icon="fluent:movies-and-tv-16-filled" style={{fontSize: 28}} />
+  const seriesIcon =  <Icon icon="noto:movie-camera" style={{fontSize: 28}} />
+  const gameIcon =  <Icon icon="tabler:device-gamepad-2" style={{fontSize: 28}} />
+
+  
+
 
   return (
     <main className='tablecontainer'>
@@ -44,7 +51,7 @@ const Cards = () => {
       }
 
       {imdbData && imdbData.map(data => (
-        <Card image={data.Poster} movieDes={data.Title} type={data.Type} year={data.Year} />
+        <Card image={data.Poster} icon={data.Type === "series" ? seriesIcon : data.Type === "movie" ? movieIcon : gameIcon} movieDes={data.Title} type={data.Type} year={data.Year} />
       ))}
 
     </main>

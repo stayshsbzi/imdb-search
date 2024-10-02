@@ -1,27 +1,26 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
-import React,{createContext } from 'react'
-import ComponentC from './components/ComponentC.jsx'
-export const UserContext = createContext()
-function App() {
-  const user = 'setayesh'
-  return (
-    <div className='App'>
-      <UserContext.Provider value={user}>
-    <ComponentC/>
-    </UserContext.Provider>
-    <button > check for imdb </button> 
-    <Routes>
-      if (button='onclick') {
-      <Route path="/" element={<Home />} />
-       }
-      </Routes>
- else()
- {
+import { UserContext } from './context/UserContext'
+import { useState } from 'react'
 
- }
-    </div>
+function App() {
+
+  const user = {
+    name: 'seti',
+    age: 100,
+    gender: 'none',
+    color: 'brown'
+  }
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  return (
+    <UserContext.Provider value={[isLoggedIn, setIsLoggedIn]}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </UserContext.Provider>
   )
 }
 
